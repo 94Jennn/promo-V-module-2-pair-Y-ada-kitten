@@ -1,21 +1,22 @@
-'use strict';
+"use strict";
 
-console.log ('Ready');
+console.log("Ready");
 
-const list = document.querySelector('.js-list');
+const list = document.querySelector(".js-list");
+const input_search_desc = document.querySelector(".js_in_search_desc");
 
 const kittenOne = `<li class="card">
 <article>
   <img
     class="card_img"
-    src= ${kittenImageOne} 
+    src=${kittenImageOne} 
     alt="gatito"
   />
   <h3 class="card_title"> ${kittenNameOne} </h3>
   <h4 class="card_race">${kittenRaceOne}</h4>
   <p class="card_description"> ${kittenDescOne}</p>
 </article>
-</li>`
+</li>`;
 
 const kittenTwo = `<li class="card">
   <img class="card_img" 
@@ -25,7 +26,7 @@ const kittenTwo = `<li class="card">
 <h3 class="card_title">${kittenNameTwo}</h3>
 <h4 class="card_race">${kittenRaceTwo}</h4>
 <p class="card_description"> ${kittenDescTwo}</p>
-</li>`
+</li>`;
 
 const kittenThree = `<li class="card">
 <img
@@ -36,10 +37,9 @@ const kittenThree = `<li class="card">
 <h3 class="card_title">${kittenNameThree}</h3>
 <h4 class="card_race">${kittenRaceThree}</h4>
 <p class="card_description"> ${kittenDescThree}</p>
-</li>`
+</li>`;
 
-
-list.innerHTML = kittenOne + kittenTwo + kittenThree 
+list.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 const kittenImageOne = `https://dev.adalab.es/gato-siames.webp`;
 const kittenNameOne = `Anastacio`;
@@ -61,3 +61,21 @@ const kittenDescThree = `Tienen la cabeza cuadrada y los ojos simétricos, por l
 bella mirada se ha convertido en una de sus señas de identidad.
 Sus ojos son grandes y las orejas resultan largas y en punta.`;
 const kittenRaceThree = `Maine Coon`;
+
+const descrSearchText = input_search_desc.value;
+
+if (kittenDescOne.includes(descrSearchText)) {
+  descrSearchText.innerHTML = kittenOne;
+  
+}
+
+if (kittenDescTwo.includes(descrSearchText)) {
+  descrSearchText.innerHTML = kittenTwo;
+}
+
+if (kittenDescThree.includes(descrSearchText)) {
+  descrSearchText.innerHTML = kittenThree;
+ 
+}
+console.log (descrSearchText);
+
