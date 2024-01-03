@@ -68,17 +68,41 @@ const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
 
 if (kittenDescOne.includes(descrSearchText)) {
-  console.log(descrSearchText.innerHTML = kittenOne);
-  
+  console.log(`${descrSearchText} = ${kittenOne}`);
 }
 
 if (kittenDescTwo.includes(descrSearchText)) {
-  console.log(descrSearchText.innerHTML = kittenTwo);
+  console.log(`${descrSearchText} = ${kittenTwo}`);
 }
 
 if (kittenDescThree.includes(descrSearchText)) {
-  console.log(descrSearchText.innerHTML = kittenThree);
+  console.log(`${descrSearchText} = ${kittenThree}`);
 
 }
 
 //Ejercicio 4: Eventos. 
+
+const button = document.querySelector('.js-btn-add');
+button.addEventListener('click', () => {
+  console.log('pepino');
+})
+
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const inputRace = document.querySelector('.js-input-race');
+const labelMessageError = document.querySelector('.js-label-error');
+
+const valueDesc = inputDesc.value;
+const valuePhoto = inputPhoto.value;
+const valueName = inputName.value;
+const valueRace = inputRace.value;
+
+if (valueDesc === '' || valuePhoto === '' || valueName === ''){
+  valueDesc !== ${inputDesc.value} || valuePhoto !== ${inputPhoto.value} || valueName != ${inputName.value}
+} else {
+  console.log('Uy, parece que te has olvidado algo');
+}
+
+//Pedir soporte para condicional. Eventos ejercicio 2.4
+
