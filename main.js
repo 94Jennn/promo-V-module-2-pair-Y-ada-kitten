@@ -2,7 +2,7 @@
 
 console.log("Ready");
 
-const list = document.querySelector('.js-list');
+const list = document.querySelector(".js-list");
 
 const kittenImageOne = `https://dev.adalab.es/gato-siames.webp`;
 const kittenNameOne = `Anastacio`;
@@ -48,7 +48,6 @@ bella mirada se ha convertido en una de sus señas de identidad.
 Sus ojos son grandes y las orejas resultan largas y en punta.`;
 const kittenRaceThree = `Maine Coon`;
 
-
 const kittenThree = `<li class="card">
 <img
   class="card_img"
@@ -62,9 +61,7 @@ const kittenThree = `<li class="card">
 
 list.innerHTML = kittenOne + kittenTwo + kittenThree;
 
-
-
-const input_search_desc = document.querySelector('.js_in_search_desc');
+const input_search_desc = document.querySelector(".js_in_search_desc");
 const descrSearchText = input_search_desc.value;
 
 if (kittenDescOne.includes(descrSearchText)) {
@@ -77,32 +74,47 @@ if (kittenDescTwo.includes(descrSearchText)) {
 
 if (kittenDescThree.includes(descrSearchText)) {
   console.log(`${descrSearchText} = ${kittenThree}`);
-
 }
 
-//Ejercicio 4: Eventos. 
+//Ejercicio 4: Eventos.
 
-const button = document.querySelector('.js-btn-add');
-button.addEventListener('click', () => {
-  console.log('pepino');
-})
+const button = document.querySelector(".js-btn-add");
+button.addEventListener("click", () => {
+  console.log("pepino");
+});
 
-const inputDesc = document.querySelector('.js-input-desc');
-const inputPhoto = document.querySelector('.js-input-photo');
-const inputName = document.querySelector('.js-input-name');
-const inputRace = document.querySelector('.js-input-race');
-const labelMessageError = document.querySelector('.js-label-error');
+const inputDesc = document.querySelector(".js-input-desc");
+const inputPhoto = document.querySelector(".js-input-photo");
+const inputName = document.querySelector(".js-input-name");
+const inputRace = document.querySelector(".js-input-race");
+const labelMessageError = document.querySelector(".js-label-error");
 
 const valueDesc = inputDesc.value;
 const valuePhoto = inputPhoto.value;
 const valueName = inputName.value;
 const valueRace = inputRace.value;
 
-if (valueDesc === '' || valuePhoto === '' || valueName === ''){
-  valueDesc !== ${inputDesc.value} || valuePhoto !== ${inputPhoto.value} || valueName != ${inputName.value}
+if (
+  valueDesc === "" ||
+  valuePhoto === "" ||
+  valueName === "" ||
+  valueRace === ""
+) else if {
+  labelMessageError.innerHTML = "Uy, parece que te has olvidado algo";
 } else {
-  console.log('Uy, parece que te has olvidado algo');
+  labelMessageError.innerHTML = "";
 }
 
 //Pedir soporte para condicional. Eventos ejercicio 2.4
 
+const buttonCancelForm = document.querySelector(".js-button-cancel");
+const newForm = document.querySelector(".js-new-form");
+
+buttonCancelForm.addEventListener("click", (event) => {
+  event.preventDefault();
+  newForm.classList.add("collapsed");
+  inputDesc.value = "";
+  inputPhoto.value = "";
+  inputName.value = "";
+  inputRace.value = "";
+});
