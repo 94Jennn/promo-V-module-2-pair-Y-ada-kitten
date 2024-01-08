@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 console.log("Ready");
 
@@ -78,10 +78,6 @@ if (kittenDescThree.includes(descrSearchText)) {
 
 //Ejercicio 4: Eventos.
 
-const button = document.querySelector(".js-btn-add");
-button.addEventListener("click", () => {
-  console.log("pepino");
-});
 
 const inputDesc = document.querySelector(".js-input-desc");
 const inputPhoto = document.querySelector(".js-input-photo");
@@ -95,26 +91,58 @@ const valueName = inputName.value;
 const valueRace = inputRace.value;
 
 if (
-  valueDesc === "" ||
-  valuePhoto === "" ||
-  valueName === "" ||
-  valueRace === ""
-) else if {
+  valueDesc === "" || valuePhoto === "" || valueName === "" || valueRace === ""
+)  {
   labelMessageError.innerHTML = "Uy, parece que te has olvidado algo";
 } else {
   labelMessageError.innerHTML = "";
 }
 
-//Pedir soporte para condicional. Eventos ejercicio 2.4
 
 const buttonCancelForm = document.querySelector(".js-button-cancel");
-const newForm = document.querySelector(".js-new-form");
+const newFormElement = document.querySelector(".js-new-form");
 
-buttonCancelForm.addEventListener("click", (event) => {
+/*buttonCancelForm.addEventListener("click", (event) => {
   event.preventDefault();
-  newForm.classList.add("collapsed");
+  newFormElement.classList.add("collapsed");
   inputDesc.value = "";
   inputPhoto.value = "";
   inputName.value = "";
   inputRace.value = "";
+});*/
+
+
+//Ejercicio 5: Mostrar/ocultar formulario.
+
+const circle = document.querySelector(".js-circle");
+
+function showNewCatForm() {
+  newFormElement.classList.remove('collapsed');
+}
+
+
+function hideNewCatForm() {
+  newFormElement.classList.add('collapsed');
+}
+
+function handleClickNewCatForm (event) {
+  event.preventDefault();
+    if (newFormElement.classList.contains('collapsed')) {
+      showNewCatForm();
+    } else {
+      hideNewCatForm();
+    }
+}
+
+circle.addEventListener('click', handleClickNewCatForm);
+
+//Ejercicio 5: Adicionar nuevo gatito.
+const button = document.querySelector(".js-btn-add");
+
+button.addEventListener("click", (addNewKitten) =>{
+  console.log("pepo");
 });
+
+function addNewKitten(event){
+
+}
